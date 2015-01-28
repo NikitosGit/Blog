@@ -1,2 +1,11 @@
 <b><h1> <%= @post.title %></h1></b></br>
 <%= @post.text %>
+<h3>Коментарии</h3>
+
+<% if @comment.empty? %>
+	<b>Нет коментариев</b>
+<% else %>
+	<% @comment.each do |c| %>
+		<p><%= c.text %>
+	<% end %>
+<% end %>

@@ -7,6 +7,10 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.where(id: params[:id]).first
+		#@comment = Comment.new
+		#@comment.post = @post
+		@comment = Comment.where(post_id: params[:id])
+
 		#render text: @post.map {|i| "#{i.id} #{i.title}: #{i.text}"}.join("<br/>")
 		render "show"
 	end
