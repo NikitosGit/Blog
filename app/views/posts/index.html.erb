@@ -1,0 +1,9 @@
+<h1>Сообщения в блоге</h1>
+<% if @post.empty? %>
+	<b>Нет сообщений</b>
+<% else %>
+	<% @post.each do |p| %>
+		<p><b><%=link_to p.title, post_path(p) %></b></br>
+		<%= p.text %>
+	<% end %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Создать новое сообщение</h1>
+<%= form_for @post do |f| %>
+	<p>Название:<%= f.text_field :title %></p>
+	<p>Название:<%= f.text_area :text %></p>
+
+	<p><%= f.submit "Опубликовать" %></p>
+<% end %>
