@@ -30,6 +30,25 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def edit
+		@post = Post.where(id: params[:id]).first
+	end
+
+	def update
+		@post = Post.where(id: params[:id]).first
+		@post.update_attributes(post_params);
+		if @post.errors.empty?
+			redirect_to post_path(@post)
+		else
+			redirect_to "edit"
+		end
+	end
+
+	def destroy
+		@post = Post.where(id: params[:id]).first
+		@post.destroy
+		redirect_to action: "index"
+	end
 
 	private 
 		

@@ -4,6 +4,9 @@
 <% else %>
 	<% @post.each do |p| %>
 		<p><b><%=link_to p.title, post_path(p) %></b></br>
-		<%= p.text %>
+		<%= p.text %></br>
+		<%=  link_to("Редактировать", edit_post_path(p))  %> 
+		|  
+		<%=  link_to("Удалить", post_path(p),method: :delete, data: {confirm: "Точно удалить?"})  %>
 	<% end %>
 <% end %>
