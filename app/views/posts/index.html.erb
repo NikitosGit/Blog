@@ -2,6 +2,7 @@
 <% if @post.empty? %>
 	<b>Нет сообщений</b>
 <% else %>
+	<%=  link_to("Создать новый пост", new_post_path(@post))  %> 
 	<% @post.each do |p| %>
 		<p><b><%=link_to p.title, post_path(p) %></b></br>
 		<%= p.text %></br>

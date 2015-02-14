@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 		if @post.errors.empty?
 			redirect_to post_path(@post)
 		else
+			@error_string = @post.errors.full_messages.join(", ")
 			render "new"
 		end
 	end
