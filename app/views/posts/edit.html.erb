@@ -1,3 +1,5 @@
+<% provide(:title, 'Редактирование') %>
+<!DOCTYPE html>
 <h1>Редактировать пост</h1>
 <%= form_for @post do |f| %>
 	<p>Заголовок:<%= f.text_field :title %></p>
